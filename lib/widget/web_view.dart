@@ -106,7 +106,7 @@ class _WebViewState extends State<WebView> {
               initialChild: Container(
                 color: Colors.white,
                 child: Center(
-                  child: Text('haha...'),
+                  child: CircularProgressIndicator(),
                 ),
               ),
             ),
@@ -131,23 +131,42 @@ class _WebViewState extends State<WebView> {
           child: Stack(
             children: <Widget>[
               GestureDetector(
+                onTap: () {
+                  Navigator.pop(context);
+                },
                 child: Container(
                   margin: EdgeInsets.only(left: 10),
-                  child: Icon(Icons.close, size: 26, color: backgroundColor),
+                  child: Icon(Icons.close, size: 26, color: backBtnColor),
                 ),
               ),
               Positioned(
                 left: 0,
                 right: 0,
                 child: Center(
-                  child: Text(widget.title ?? '',
-                      style: TextStyle(color: backgroundColor, fontSize: 20)),
+                  child: Text(_genTittle(widget.title),
+                      style: TextStyle(color: backBtnColor, fontSize: 20)),
                 ),
               )
             ],
           ),
         ),
       );
+    }
+  }
+
+  _genTittle(String title) {
+    if (title != null) {
+      int length = widget.title.length;
+      if (length == 0) {
+        return '';
+      }
+      if (length < 10) {
+        return title;
+      } else {
+        return title.substring(0, 10) + '...';
+      }
+    } else {
+      return '';
     }
   }
 }

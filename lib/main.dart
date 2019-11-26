@@ -131,6 +131,7 @@ class _RouterNavigatorState extends State<RouterNavigator> {
             });
           },
         ),
+        _item('navigatorApp 页', NavigatorApp(), 'navigatorApp'),
         _item('跳转到插件页', PluginUse(), 'plugin'),
         _item('stateless demo 页', LessGroupPage(), 'less'),
         _item('stateful 与 layout 页', StatefulGroupPage(), 'ful'),
@@ -143,7 +144,6 @@ class _RouterNavigatorState extends State<RouterNavigator> {
         _item('animationApp 页', AnimationApp(), 'animationApp'),
         _item('animationWidgetApp 页', AnimationWidgetApp(), 'animationWidgetApp'),
         _item('animmationBuilderApp 页', AnimmationBuilderApp(), 'animmationBuilderApp'),
-        _item('navigatorApp 页', NavigatorApp(), 'navigatorApp'),
         _item('httpApp 页', HttpApp(), 'httpApp'),
         _item('sharePreferencesApp 页', SharePreferencesApp(), 'sharePreferencesApp'),
         _item('listViewHorizontalApp 页', ListViewHorizontalApp(), 'listViewHorizontalApp'),

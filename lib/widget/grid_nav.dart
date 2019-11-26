@@ -6,7 +6,7 @@ import 'web_view.dart';
 
 class GridNav extends StatelessWidget {
   GridNavModel gridNav;
-  GridNav({Key key, this.gridNav}) : super(key: key);
+  GridNav({Key key,@required this.gridNav}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -83,42 +83,6 @@ class GridNav extends StatelessWidget {
         item);
   }
 
-  // Widget _genDoubleItems(
-  //     BuildContext context, CommonModel topItem, CommonModel bottomItem) {
-  //   return FractionallySizedBox(
-  //     widthFactor: 1,
-  //     child: Container(
-  //       decoration: BoxDecoration(
-  //           border: Border(left: BorderSide(color: Colors.white, width: 0.8))),
-  //       child: Column(
-  //         children: <Widget>[
-  //           _genInnerItem(context, topItem, true),
-  //           _genInnerItem(context, bottomItem, false),
-  //         ],
-  //       ),
-  //     ),
-  //   );
-  // }
-
-  // Widget _genInnerItem(BuildContext context, CommonModel item, bool isFirst) {
-  //   return _wrapGestureDetector(
-  //       context,
-  //       Container(
-  //         child: Expanded(
-  //           child: Center(
-  //             child: Text(item.title,
-  //                 style: TextStyle(color: Colors.white, fontSize: 14)),
-  //           ),
-  //         ),
-  //         decoration: BoxDecoration(
-  //             border: Border(
-  //                 bottom: isFirst
-  //                     ? BorderSide(color: Colors.white, width: 0.8)
-  //                     : BorderSide.none)),
-  //       ),
-  //       item);
-  // }
-
   Widget _genDoubleItems(
       BuildContext context, CommonModel topItem, CommonModel bottomItem) {
     return Column(
@@ -168,6 +132,7 @@ class GridNav extends StatelessWidget {
                       url: model.url,
                       statusBarColor: model.statusBarColor,
                       hideAppBar: model.hideAppBar,
+                      title: model.title,
                     )));
       },
       child: widget,

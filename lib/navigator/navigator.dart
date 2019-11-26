@@ -18,7 +18,7 @@ class _NavigatorAppState extends State<NavigatorApp> {
     return Scaffold(
       body: PageView(
         controller: _pageController,
-        children: <Widget>[HomePage(), SearchPage(), TravelPage(), MyPage()],
+        children: <Widget>[HomePage(), SearchPage(hideLeft: true,), TravelPage(), MyPage()],
         onPageChanged: (index) {
           setState(() {
             _currentIndex = index;
